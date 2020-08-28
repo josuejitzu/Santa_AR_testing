@@ -2,85 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="cover.css">
+    <!-- no necesario a menos que integremo el model-viewer en la pagina -->
+    <!-- <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script> -->
+    <title>Santa AR</title>
 
-
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"/>
-
- 
-    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"/>
-    
-  
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-</script>
-    <title>Document</title>
 </head>
 
 <body>
-    
-        <model-viewer alt="A 3D model of an astronaut." 
-            src="test_coca_02.glb"
-            ios-src="test_sana_2.usdz"
-            ar
-            ar-modes="webxr scene-viewer quick-look "
-            camera-controls
-            >
-            <button slot="ar-button" 
-                style="background-color: white; 
-                       border-radius: 4px; 
-                       border-color:aqua;
-                       border: none; 
-                       position: absolute; 
-                       top: 16px; right: 16px; ">
-                👋 Activate AR
-            </button>
-        </model-viewer>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
+        <header class="masthead mb-auto">
+          <div class="inner">
+            <h3 class="masthead-brand">Palacio Hierro RA</h3>
+            <!-- <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link active" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Contact</a>
+            </nav> -->
+          </div>
+        </header>
+      
+        <main role="main" class="inner cover">
+          <h1 class="cover-heading">RA</h1>
+          <p class="lead text-center">Tomate una foto con Santa Claus en Realidad Virtual, simplemente selecciona un link de abajo de acuerdo a tu celular</p>
+          <!-- <p class="lead">
+            <a href="intent://arvr.google.com/scene-viewer/1.0?file=https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/augmented-reality/huracan/huracan_evo_rwd_spyder/Huracan-EVO-RWD-Spyder-opt-22.glb?mode=ar_only&amp;title=HURACAN EVO RWD SPYDER&amp;resizable=true#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://www.lamborghini.com;end;" target="_blank" class="btn btn-lg btn-secondary">Lamborghini</a>
+          </p>-->
+          
+         
+          <a target="_blank" class="btn btn-lg btn-secondary" href="intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/josuejitzu/Santa_AR_testing/master/CesiumMan.glb&amp;mode=ar_only&amp;title=Mi Modelo #Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">
+              AR Android
+          </a>
+     
+     
+          <a target="_blank" class="btn btn-lg btn-secondary" href="./modelos/test_sana_2.usdz">
+              AR iOS
+          </a>
+           
+        </main>
+      
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+              <p>Cover template  <a href="https://jitzu.mx/">Jitzu</a>.</p>
+            </div>
+          </footer>
 
-
-        <a class="android icon-button" 
-        href="intent://arvr.google.com/scene-viewer/1.0?file=https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/augmented-reality/huracan/huracan_evo_rwd_spyder/Huracan-EVO-RWD-Spyder-opt-22.glb?mode=ar_only&amp;title=HURACAN EVO RWD SPYDER&amp;resizable=true#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://www.lamborghini.com;end;" target="_blank">
-        Lambo
-        </a>
-        <p></p>
-        <a class="android-ar-button"
-         href="intent://arvr.google.com/scene-viewer/1.0?file=https://raw.github.com/josuejitzu/Santa_AR_testing/master/test_coca_02.glb&title=Tiger#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;'"
+     
+        
+        <!-- https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf -->
+        <!-- https://raw.githubusercontent.com/josuejitzu/Santa_AR_testing/master/test_coca_02.glb si descarga un archivo pero no lo acepta, al contrario del Lambo que si funciona, update:parece estar corrupto por que CesiumMan.glb si lo acepto-->
+        <!-- https://raw.githubusercontent.com/josuejitzu/Santa_AR_testing/master/CesiumMan.gltf   sin el /blob/ funciono-->
+        <!-- https://raw.githubusercontent.com/josuejitzu/Santa_AR_testing/master/CesiumMan.glb -->
+        <!-- <a class="android-ar-button"
+         href="intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/josuejitzu/Santa_AR_testing/master/CesiumMan.glb&amp;mode=ar_only&amp;title=Mi Modelo #Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;'"
         >
-        Mi modelo
-        </a>
-        <p></p>
-        <a class="ios-ar-button"
-        href="test_sana_2.usdz" type="model/vndusdz+zip"
-        rel="ar"
-        >
+        AR Android
+        </a> -->
 
-        AR iOS
-        </a>
-        <p></p>
-        <!-- <a id="ar-dummy-link" 
-        href="https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/augmented-reality/huracan/huracan_evo_rwd_spyder/Huracan-EVO-RWD-Spyder-opt-22.usdz" 
-        type="model/vnd.usdz+zip" rel="ar">Ejemplo lamborghini</a>
-        <p></p> -->
-    <div>
-        <!-- <a href="intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf&mode=ar_only#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">Avocado</a>; -->
-        <a href="intent://arvr.google.com/scene-viewer/1.0?file=test_coca_02.glbf&mode=ar_only#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">Avocado</a>;
+
+
+        
     </div>
-    <model-viewer ar alt="A 3D model of an astronaut." src="test_coca_02.glb"></model-viewer>
+    
+    
+    <!-- <model-viewer ar alt="A 3D model of an astronaut." src="test_coca_02.glb"></model-viewer> -->
     <!-- Loads <model-viewer> for modern browsers: -->
-     <script type="module"
+     <!-- <script type="module"
          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
-     </script>
+     </script> -->
      
 
      <!-- Loads <model-viewer> for old browsers like IE11: -->
-     <script nomodule
+     <!-- <script nomodule
          src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
-     </script>
+     </script> -->
 
 
-    <script>
+    <!-- <script>
         // Check whether this is an Android device.
     const isAndroid = /android/i.test(navigator.userAgent);
     // This web fallback url will launch if the correct version of the Google app is
@@ -104,7 +108,7 @@
     // Add the link to the page.
     document.body.appendChild(a);
 
-    </script>
+    </script> -->
 
 </body>
 </html>
